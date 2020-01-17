@@ -28,6 +28,7 @@ class HelloComponent2 extends JComponent implements MouseMotionListener {
     public void mouseDragged(MouseEvent e) {
         messageX = e.getX();
         messageY = e.getY();
+        repaint();
     }
 
     public void mouseMoved(MouseEvent e) {
