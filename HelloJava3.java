@@ -33,6 +33,7 @@ class HelloComponent3 extends JComponent implements MouseMotionListener, ActionL
 	}
 	
 	public void paintComponent( Graphics g) {
+		g.setColor(currentColor());
 		g.drawString( theMessage,  messageX,  messageY);
 	}
 	
