@@ -12,9 +12,11 @@ public class HelloJava2 {
     }
 }
 
+//making a component with a "Hello, Java2!" message that can be dragged with a mouse
+
 class HelloComponent2 extends JComponent implements MouseMotionListener {
     String theMessage;
-    int messageX = 125, messageY = 95; // x and y axis for message
+    int messageX = 125, messageY = 95; // initial x and y coordinates for message
 
     HelloComponent2(String message) {
         theMessage = message;
