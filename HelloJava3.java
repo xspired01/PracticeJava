@@ -12,6 +12,9 @@ public class HelloJava3 {
 	}
 }
 
+
+//making message, "Hello, Java!" change color when Change button is clicked
+
 class HelloComponent3 extends JComponent implements MouseMotionListener, ActionListener {
 	String theMessage;
 	int messageX = 125, messageY = 95;
@@ -20,7 +23,7 @@ class HelloComponent3 extends JComponent implements MouseMotionListener, ActionL
 	
 	int colorIndex;
 	static Color[] someColors = {
-			Color.black, Color.red, Color.green, Color.blue, Color.magenta
+			Color.black, Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.magenta
 	};
 	
 	public HelloComponent3( String message) {
@@ -33,7 +36,6 @@ class HelloComponent3 extends JComponent implements MouseMotionListener, ActionL
 	}
 	
 	public void paintComponent( Graphics g) {
-		g.setColor(currentColor());
 		g.drawString( theMessage,  messageX,  messageY);
 	}
 	
@@ -51,11 +53,10 @@ class HelloComponent3 extends JComponent implements MouseMotionListener, ActionL
 	}
 	
 	synchronized private void changeColor() {
-		if(++colorIndex == someColors.length) {
+		if(++colorIndex == someColors.length)
 			colorIndex = 0;
-			setForeground( currentColor());
-			repaint();
-		}
+		setForeground( currentColor() );
+		repaint();
 	}
 	
 	synchronized private Color currentColor() {
